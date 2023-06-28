@@ -15,6 +15,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - name: toolchain
+        run: rustup component add rust-src --toolchain nightly-x86_64-pc-windows-msvc
       - name: environment
         run: rustup target add thumbv7em-none-eabihf
       - name: x86_64
