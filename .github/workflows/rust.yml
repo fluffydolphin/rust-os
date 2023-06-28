@@ -25,14 +25,6 @@ jobs:
         run: rustup target add thumbv7em-none-eabihf
       - name: x86_64
         run: cargo build --target x86_64-rust_os.json
-      - name: bootimage-install
-        run: cargo install bootimage
-      - name: llvm
-        run: rustup component add llvm-tools-preview
-      - name: bootimage
-        run: cargo bootimage
-      - name: Build
-        run: cargo build --verbose
       - name: debug
         run: ls /home/runner/work/rust-os/rust-os/target/x86_64-rust_os/debug/deps/
       - name: Run tests
