@@ -16,9 +16,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: toolchain-install
-        run: rustup toolchain install nightly-x86_64-pc-windows-msvc
+        run: rustup component add rust-src --toolchain nightly-x86_64-unknown-linux-gnu
       - name: toolchain
-        run: rustup component add rust-src --toolchain nightly-x86_64-pc-windows-msvc
+        run: rustup component add rust-src --toolchain nightly-x86_64-unknown-linux-gnu
       - name: environment
         run: rustup target add thumbv7em-none-eabihf
       - name: x86_64
@@ -26,7 +26,7 @@ jobs:
       - name: bootimage
         run: cargo install bootimage
       - name: llvm
-        run: rustup component add llvm-tool-preview
+        run: rustup component add llvm-tools-preview
       - name: Build
         run: cargo build --target thumbv7em-none-eabihf --verbose
       - name: Run tests
