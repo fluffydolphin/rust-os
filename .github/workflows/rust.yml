@@ -30,6 +30,6 @@ jobs:
       - name: llvm
         run: rustup component add llvm-tools-preview
       - name: Build
-        run: cargo build --target thumbv7em-none-eabihf --verbose
+        run: cargo build --verbose
       - name: Run tests
         run: cargo test --verbose
