@@ -34,4 +34,4 @@ jobs:
       - name: debug
         run: ls /home/runner/work/rust-os/rust-os/target/x86_64-rust_os/debug/deps/
       - name: Run tests
-        run: cargo test --verbose
+        run: cargo run --verbose
